@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>------ Colour Craze ------</title>
+    <link href="Styles/Game.css" rel="stylesheet" type="text/css">
+    <script src="Scripts/jquery.min.js">
+    </script>
+    <script src="Scripts/jquery.effects.core.js">
+    </script>
+    <script src="Scripts/Game.js">
+    </script>
+</head>
+
+<body id="body" onKeyPress="keypressCheck(event)" onLoad="setZoneHeight();setColours();" onClick="onClickCheck()">
+<div id="loseTitle">
+  <h1 id="loseTitle2">You failed.</h1>
+  <h2>You scored <span id="finalScore"></span>.</h2>
+  <h3 onClick="setHighScore();location.reload();">Click to restart!</h3>
+</div>
+  <div id="colour1" class="colourzone gameElements" onClick="colourClicked(1)">
+    <br />
+  </div>
+  <div id="colour2" class="colourzone gameElements" onClick="colourClicked(2)">
+    <br />
+  </div>
+  <div id="colour3" class="colourzone gameElements" onClick="colourClicked(3)">
+    <br />
+  </div>
+  <div id="colour4" class="colourzone gameElements" onClick="colourClicked(4)">
+    <br />
+  </div>
+<div id="middle" class="gameElements top" onClick="startGame();">
+<span id="footerL">S T A R T !</span>
+</div>
+<div id="middle" class="gameElements bottom">
+<h4 id="credit" class="gameElements">Speed: <span id="speed">3</span>s - Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br>
+
+</h4>
+</div>
+</body>
+</html>
