@@ -1,4 +1,4 @@
-/* CSS written entirely by Ben Carroll */
+ /* CSS written entirely by Ben Carroll */
 @font-face {
     font-family: 'Six Caps';
     src: url(SixCaps.ttf) format("truetype");
@@ -13,8 +13,9 @@
     margin: 0 auto;
     text-align: center;
 }
-body {
+html, body {
     background-color: orange;
+    cursor: url('Images/rainbow-ani3.gif');
 }
 
 .SiLfont {
@@ -81,7 +82,7 @@ text-align: center;
        1px 1px 0 #000;}
 #loseTitle {
   display:none;
-  padding: 50px;
+  padding: 60px;
   font-size: 100px;
   color:darkblue;
 }

@@ -21,12 +21,12 @@
 #wtcc {
   color:#ff8c00;
 }
-.tut {
+/*.tut {
   display:none;
   font-size: 45px;
   color:#ff8c00;
 }
-
+*/
 #wtcc.activateLargeText,#herotext, .tut {
     text-shadow: 3px 3px 4px #a52a2a;
 }
@@ -76,18 +76,18 @@ a {
     text-align: center;
 }
 
-#footerL,#credit {
+/*#startButton {
+  height:auto;
+  background-color: blue;
+  opacity: .5;
+  margin: 0 auto;
+}*/
+
+#credit {
     position: fixed;
     bottom: 10px;
     color: red;
     font-size: 20px;
     font-family: 'SiL';
-}
-
-#footerL {
-    left: 10px;
-}
-
-#credit {
     right: 10px;
 }

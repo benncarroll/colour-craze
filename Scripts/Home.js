@@ -42,23 +42,18 @@ function sleep(e){for(var t=(new Date).getTime(),n=0;1e7>n&&!((new Date).getTime
 // in between each change, it also pauses the changing background
 var titlez=function(){sleep(200),document.title="Colour Craze",sleep(200),document.title="olour Craze - C",sleep(200),document.title="lour Craze - Co",sleep(200),document.title="our Craze - Col",sleep(200),document.title="ur Craze - Colo",sleep(200),document.title="r Craze - Colou",sleep(200),document.title=" Craze - Colour",sleep(200),document.title="Craze - Colour ",sleep(200),document.title="raze - Colour C",sleep(200),document.title="aze - Colour Cr",sleep(200),document.title="ze - Colour Cra",sleep(200),document.title="e - Colour Craz",sleep(200),document.title=" - Colour Craze",sleep(200),document.title="- Colour Craze",sleep(200),document.title=" Colour Craze",sleep(200),document.title="Colour Craze"};
 
-function hideWelcome(e) {
+// function hideWelcome(e) {
   //Start hiding elements
-  hide1 = document.getElementById('herotext');
-  hide2 = document.getElementById('tutLarge');
-  hide3 = document.getElementById('footerL');
-  hide1.style.display='none';
-  hide2.style.display='none';
-  hide3.style.display='none';
-
+  // hide1 = document.getElementById('herotext');
+  // hide2 = document.getElementById('tutLarge');
+  // hide1.style.display='none';
+  // hide2.style.display='none';
   //Start showing elements
-  if (e="true") {
-    show1 = document.querySelectorAll(".tut");
+  // if (e="true") {
+    // show1 = document.querySelectorAll(".tut");
 
-    for (var i = 0; i < show1.length; i++) {
-        show1[i].style.display = 'inline';
-    }
-  }
-
-
-}
+    // for (var i = 0; i < show1.length; i++) {
+        // show1[i].style.display = 'inline';
+    // }
+  // }
+// }

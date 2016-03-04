@@ -13,9 +13,10 @@
 
 <body id="body" onKeyPress="keypressCheck(event)" onLoad="setZoneHeight();setColours();" onClick="onClickCheck()">
 <div id="loseTitle">
-  <h1 id="loseTitle2">You failed.</h1>
-  <h2>You scored <span id="finalScore"></span>.</h2>
-  <h3 onClick="setHighScore();location.reload();">Click to restart!</h3>
+  <h2 id="loseTitle2">You failed.</h2>
+  <h4>You scored <span id="finalScore"></span>.</h4>
+  <h4>Your highscore is <span id="highScore"></span>.</h4>
+  <h4 onClick="location.reload();">Click to restart!</h4>
 </div>
   <div id="colour1" class="colourzone gameElements" onClick="colourClicked(1)">
     <br />

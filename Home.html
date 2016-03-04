@@ -11,24 +11,26 @@
     </script>
 </head>
 
-<body onLoad="document.getElementById('wtcc').className = 'activateLargeText'; checkBrowser();">
+<body onClick="window.location.assign('Tutorial.html')" onLoad="document.getElementById('wtcc').className = 'activateLargeText'; checkBrowser();">
     <div id="content">
       <!-- Home page. -->
         <h1 id="herotext"><span id="wtcc">Welcome to Colour Craze.</span><br>
-        <a id="tutLarge" onClick="hideWelcome('true')">Click to begin.</a>
+        <a id="tutLarge">Click to begin.</a>
         </h1>
-        <h4 id="footerL"><a onClick="window.location.assign('Game.html')" id="footerL"><span id="ssize" class="SiLfont" onMouseOver="">Click to skip tutorial!</span></a>
         </h4>
       <!-- Second page. -->
-        <h1 id="wtcc" class="tut SiLfont largest">
+        <!--<h1 id="wtcc" class="tut SiLfont largest">
+          <nodisplay>
           When the chosen colour appears, you must click on it.<br />
           If you miss five colours, you lose.<br /><br />
           You can select colours using your mouse,<br />
           or by pressing 1, 2, 3 or 4.<br /><br />
-          <span onClick="window.location.assign('Game.html')" class="SiLfont largest">Click to begin!<br /><br /></span>
+        </nodisplay>
+          <button id="startButton" onClick="window.location.assign('Game.html')" class="SiLfont largest">Click to begin!</button>
         </h1>
         <h2 class="SiLfont larger">
         </h2>
+      -->
         <h4 id="credit">Made by Ben Carroll.<br></h4>
     </div>
 </body>
