@@ -3,22 +3,22 @@
 <head>
     <title>------ Colour Craze ------</title>
     <link href="Styles/Game.css" rel="stylesheet" type="text/css">
-    <script src="Scripts/jquery.min.js">
-    </script>
-    <script src="Scripts/jquery.effects.core.js">
-    </script>
-    <script src="Scripts/Game.js">
-    </script>
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/Game.js"></script>
     <script lang="JavaScript">
     //Function to set height of game pieces. Written by Ben Carroll.
-    function setZoneHeight() {
         for (var e = document.querySelectorAll(".colourzone"), n = 0; n < e.length; n++) {
             e[n].style.height = window.innerHeight / 4 + "px"
         }
-    }</script>
+    </script>
 </head>
 
-<body id="body" onKeyPress="keypressCheck(event)" onLoad="setZoneHeight();startGame();" onClick="onClickCheck();">
+<body id="body" onKeyPress="keypressCheck(event)" onLoad="
+
+for (var e = document.querySelectorAll('.colourzone'), n = 0; n < e.length; n++) {
+    e[n].style.height = window.innerHeight / 4 + 'px'
+};
+startGame();">
 <div id="loseTitle" onClick="location.reload();">
   <h2 id="loseTitle2">You failed.</h2>
   <h4>You scored <span id="finalScore"></span>.</h4>
@@ -38,10 +38,11 @@
     <br />
   </div>
 <div id="middle" class="gameElements top" onClick="startGame();">
-<span id="footerL">S T A R T !</span>
+<span id="footerL">S T A R T !</span><br />
+<h4 id="credit"><span id="timerDisplayField">Time left: 3000ms</span></h4>
 </div>
 <div id="middle" class="gameElements bottom">
-<h4 id="credit" class="gameElements">Time left: <span id="timerDisplayField">3000</span>ms - Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br>
+<h4 id="credit" class="gameElements">Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br>
 
 </h4>
 </div>

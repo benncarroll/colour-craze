@@ -17,7 +17,7 @@ body {
     background-color: orange;
 }
 html {
-  cursor: url('animated.gif'),url('cursor.png'),crosshair;
+  cursor: url('animated.gif'),url('cursor.png');
 }
 
 .SiLfont {
@@ -51,24 +51,22 @@ html {
 }
 .top {
   top:10px;
-  width:14%;
-  left:43%;
+  width:20%;
+  left:40%;
+  background-color: yellow;
 }
 .bottom {
   bottom:10px;
-  width:26%;
-  left:37%;
+  width:20%;
+  left:40%;
+  background-color: yellow;
 }
 #credit, #footerL, #losses, #score, #timerDisplayField {
   font-family: 'SiL';
   font-size: 20px;
 }
 
-.gameElements .top {
-  background-color: yellow;
-}
-
-#footerL {
+#footerL, #credit {
 background-color: rgba(255,255,255,0);
 border: 0px rgba(255,255,255,0);
 color: white;
@@ -78,7 +76,9 @@ text-align: center;
      -1px -1px 0 #000,
       1px -1px 0 #000,
       -1px 1px 0 #000,
-       1px 1px 0 #000;}
+       1px 1px 0 #000;
+
+}
 #loseTitle {
   display:none;
   padding: 60px;
