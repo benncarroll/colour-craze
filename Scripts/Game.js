@@ -1,4 +1,4 @@
-// Sleep function, allowing us to 'pasue time' in js
+// Sleep function, allowing us to 'pause time' in js
 function sleep(e) {
     for (var t = (new Date).getTime(), n = 0; 1e7 > n && !((new Date).getTime() - t > e); n++);
 }
@@ -6,21 +6,16 @@ function sleep(e) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Define game vars
-var userScore = 0;
-var losses = -1;
-var correctZone = "";
-var gameStarted = false;
-var currentColour = "";
-var currentZones = "";
-var cc = "";
-var lastClicked = 0;
-var lossSpeed = 3000;
-var gameEnded = false;
-var highScore = "";
-function superFunc() {
-  setTimeout("setColours()",100)
-}
+// Define game vars and other stuff
+var userScore = 0,
+    losses = -1,
+    correctZone = "",
+    gameStarted = false,
+    currentColour = "",
+    currentZones, cc, lastClicked = 0,
+    lossSpeed = 3000,
+    gameEnded = false,
+    highScore = "";
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,9 +34,10 @@ function keypressCheck(stuff) {
         } else if (code === 52) {
             colourClicked(4)
         } else if (code === 53) {
-            superFunc();
+            setColours()
+        } else if (code === 63) {
+            window.location.assign('Tutorial.html')
         }
-        onClickCheck();
     }
 }
 
@@ -134,6 +130,9 @@ function colourClicked(zone) {
         if (document.getElementById('colour' + zone).style.backgroundColor == cc) {
             userScore = Number(userScore + 1);
             document.getElementById('score').innerHTML = userScore;
+            if (timeNow > (lastClicked + 300)) {
+                lossSpeed += 500;
+            }
             setColours();
             setSpeed();
         } else {

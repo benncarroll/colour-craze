@@ -13,11 +13,10 @@
     margin: 0 auto;
     text-align: center;
 }
-body {
-    background-color: orange;
-}
 html {
   cursor: url('animated.gif'),url('cursor.png');
+  background-color: orange;
+  overflow: hidden;
 }
 
 .SiLfont {
@@ -47,19 +46,17 @@ html {
     color: red;
     border: 8px ridge brown;
     padding: 10px;
-    background-color: lightgrey;
+    background-color: yellow;
 }
 .top {
   top:10px;
   width:20%;
   left:40%;
-  background-color: yellow;
 }
 .bottom {
   bottom:10px;
   width:20%;
   left:40%;
-  background-color: yellow;
 }
 #credit, #footerL, #losses, #score, #timerDisplayField {
   font-family: 'SiL';
