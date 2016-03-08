@@ -9,14 +9,21 @@
     </script>
     <script src="Scripts/Game.js">
     </script>
+    <script lang="JavaScript">
+    //Function to set height of game pieces. Written by Ben Carroll.
+    function setZoneHeight() {
+        for (var e = document.querySelectorAll(".colourzone"), n = 0; n < e.length; n++) {
+            e[n].style.height = window.innerHeight / 4 + "px"
+        }
+    }</script>
 </head>
 
-<body id="body" onKeyPress="keypressCheck(event)" onLoad="setZoneHeight();setColours();" onClick="onClickCheck()">
-<div id="loseTitle">
+<body id="body" onKeyPress="keypressCheck(event)" onLoad="setZoneHeight();startGame();" onClick="onClickCheck();">
+<div id="loseTitle" onClick="location.reload();">
   <h2 id="loseTitle2">You failed.</h2>
   <h4>You scored <span id="finalScore"></span>.</h4>
   <h4>Your highscore is <span id="highScore"></span>.</h4>
-  <h4 onClick="location.reload();">Click to restart!</h4>
+  <h4>Click to restart!</h4>
 </div>
   <div id="colour1" class="colourzone gameElements" onClick="colourClicked(1)">
     <br />
@@ -34,7 +41,7 @@
 <span id="footerL">S T A R T !</span>
 </div>
 <div id="middle" class="gameElements bottom">
-<h4 id="credit" class="gameElements">Speed: <span id="speed">3</span>s - Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br>
+<h4 id="credit" class="gameElements">Time left: <span id="timerDisplayField">3000</span>ms - Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br>
 
 </h4>
 </div>

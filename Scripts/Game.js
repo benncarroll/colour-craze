@@ -1,10 +1,3 @@
-//Function to set height of game pieces. Written by Ben Carroll.
-function setZoneHeight() {
-    for (var e = document.querySelectorAll(".colourzone"), n = 0; n < e.length; n++) {
-        e[n].style.height = window.innerHeight / 4 + "px"
-    }
-}
-
 // Sleep function, allowing us to 'pasue time' in js
 function sleep(e) {
     for (var t = (new Date).getTime(), n = 0; 1e7 > n && !((new Date).getTime() - t > e); n++);
@@ -25,6 +18,9 @@ var lastClicked = 0;
 var lossSpeed = 3000;
 var gameEnded = false;
 var highScore = "";
+function superFunc() {
+  setTimeout("setColours()",100)
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,6 +38,8 @@ function keypressCheck(stuff) {
             colourClicked(3)
         } else if (code === 52) {
             colourClicked(4)
+        } else if (code === 53) {
+            superFunc();
         }
         onClickCheck();
     }
@@ -50,7 +48,6 @@ function keypressCheck(stuff) {
 function startGame() {
     if (gameStarted === false) {
         gameStarted = true;
-        setColours();
         document.getElementById('footerL').innerHTML = "Current Colour";
     }
 }
@@ -87,7 +84,6 @@ function checkSpeed() {
         } else if (userScore === 30) {
             lossSpeed = 500;
         }
-        document.getElementById('speed').innerHTML = lossSpeed / 1000;
     }
 }
 
@@ -105,6 +101,8 @@ function setColours() {
 
 function onClickCheck() {
     if (gameStarted && gameEnded === false) {
+      resetTimer();
+      startTimer();
         var timeNow = (new Date()).getTime();
         if (timeNow > (lastClicked + lossSpeed)) {
             losses = Number(losses + 1);
@@ -135,21 +133,50 @@ function colourClicked(zone) {
             document.getElementById('score').innerHTML = userScore;
             setColours();
             checkSpeed();
-        }
-        // else if (zone == 5) {
-        // losses = Number(losses + 1);
-        // document.getElementById('losses').innerHTML = losses;
-        // checkGameOver();
-        // setColours();
-        // }
-        else {
+        } else {
             losses = Number(losses + 1);
             document.getElementById('losses').innerHTML = losses;
             checkGameOver();
             checkSpeed();
             setColours();
         }
-    } else {
-        startGame()
     }
+}
+
+
+
+
+
+
+//Timer code
+var timerMillisec = 0;
+var timer;
+
+function timerDisplay(){
+     millisec+=1
+     document.getElementById('timerDisplayField') = lossSpeed - millisec;
+     timer = setTimeout("timerDisplay()",1);
+}
+function startTimer() {
+  if (timer > 0) {
+	return;
+  }
+  timerDisplay();
+}
+function stopTimer() {
+  clearTimeout(timer);
+  timer = 0;
+}
+function startstoptimer() {
+  if (timer > 0) {
+     clearTimeout(timer);
+     timer = 0;
+  } else {
+     timerDisplay();
+  }
+}
+function resetTimer() {
+	stopTimer();
+	millisec = 0;
+	seconds = 0;
 }

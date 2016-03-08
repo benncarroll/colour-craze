@@ -13,23 +13,17 @@
     margin: 0 auto;
     text-align: center;
 }
-html, body {
+body {
     background-color: orange;
-    cursor: url('Images/rainbow-ani3.gif');
+}
+html {
+  cursor: url('animated.gif'),url('cursor.png'),crosshair;
 }
 
 .SiLfont {
   font-family: 'SiL';
   font-size: 80%;
 }
-
-#loader1 {
-  padding:25%;
-  color:white;
-  -webkit-text-stroke: 2px black;
-  display: none;
-}
-
 .colourzone {
     display:inline-block;
     width:100%;
@@ -62,13 +56,18 @@ html, body {
 }
 .bottom {
   bottom:10px;
-  width:20%;
-  left:40%;
+  width:26%;
+  left:37%;
 }
-#credit, #footerL, #losses, #score, #speed {
+#credit, #footerL, #losses, #score, #timerDisplayField {
   font-family: 'SiL';
   font-size: 20px;
 }
+
+.gameElements .top {
+  background-color: yellow;
+}
+
 #footerL {
 background-color: rgba(255,255,255,0);
 border: 0px rgba(255,255,255,0);

@@ -9,6 +9,10 @@
     src: url(SiL.ttf) format("truetype");
 }
 
+html {
+  cursor: url('cursor.png'), url('cursor.iso'),crosshair;
+}
+
 #content,* {
     font-family: 'Six Caps';
     margin-top:0 auto;
