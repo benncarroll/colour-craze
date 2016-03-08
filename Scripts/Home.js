@@ -13,7 +13,7 @@ $(document).ready(function()
           }, 1000)
       }, o)
   }
-  change_random_bgcolor(200);
+  change_random_bgcolor(0);
 });
 // End of colour changing background
 
@@ -33,14 +33,32 @@ function checkBrowser() {
 
 // Javascript sleep function, allowing us to 'pasue time' in js
 function sleep(e){for(var t=(new Date).getTime(),n=0;1e7>n&&!((new Date).getTime()-t>e);n++);}
-
-
-
 // A special title changing code that makes the title look like it is scrolling. Made by Ben Carroll.
 
 // Currently not being used as because it uses the sleep function to delay
 // in between each change, it also pauses the changing background
 var titlez=function(){sleep(200),document.title="Colour Craze",sleep(200),document.title="olour Craze - C",sleep(200),document.title="lour Craze - Co",sleep(200),document.title="our Craze - Col",sleep(200),document.title="ur Craze - Colo",sleep(200),document.title="r Craze - Colou",sleep(200),document.title=" Craze - Colour",sleep(200),document.title="Craze - Colour ",sleep(200),document.title="raze - Colour C",sleep(200),document.title="aze - Colour Cr",sleep(200),document.title="ze - Colour Cra",sleep(200),document.title="e - Colour Craz",sleep(200),document.title=" - Colour Craze",sleep(200),document.title="- Colour Craze",sleep(200),document.title=" Colour Craze",sleep(200),document.title="Colour Craze"};
+
+
+// User tracking code
+
+function checkUser() {
+    if (localStorage.getItem("seenBefore") === null) {
+        var userName = prompt("Welcome to Colour Craze!\nIt doesn't look like we've met before!\nPlease pick a username:");
+        localStorage.setItem("seenBefore", true);
+        localStorage.setItem("userName", userName)
+        document.getElementById('userName').innerHTML = "Welcome back " + localStorage.getItem("userName") + "!"
+        document.getElementById('highScore').innerHTML = "Highscore: " + localStorage.getItem("highScore")
+    } else if (localStorage.getItem("seenBefore")) {
+        document.getElementById('userName').innerHTML = "Welcome back " + localStorage.getItem("userName") + "!"
+        document.getElementById('highScore').innerHTML = "Highscore: " + localStorage.getItem("highScore")
+    }
+}
+
+
+
+
+
 
 // function hideWelcome(e) {
   //Start hiding elements

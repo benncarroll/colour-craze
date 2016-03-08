@@ -14,7 +14,7 @@ html {
 }
 
 #content,* {
-    font-family: 'Six Caps';
+    font-family: 'SiL';
     margin-top:0 auto;
     margin-left:0 auto;
     margin-right:0 auto;
@@ -49,9 +49,13 @@ body {
     transition: 1s;
 }
 
+#tutLarge {
+  font-size: 40px;
+}
+
 #wtcc.activateLargeText {
     color: #ff8c00;
-    font-size: 230px;
+    font-size: 100px;
 }
 
 .larger {
@@ -76,7 +80,7 @@ a {
 
 #herotext {
     color: #00f;
-    font-size: 80px;
+    font-size: 10px;
     text-align: center;
 }
 
@@ -96,4 +100,14 @@ a {
     font-size: 20px;
     font-family: 'SiL';
     right: 10px;
+}
+.form {
+  font-family: 'SiL';
+  width: 20%;
+  border: none;
+  color:brown;
+  background-color: lightblue;
+  font-size: 20px;
+  text-align: center;
+  height: 35px;
 }

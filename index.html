@@ -9,29 +9,34 @@
     </script>
     <script src="Scripts/Home.js">
     </script>
+    <!-- <script>
+  !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+  arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+  d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+  insertBefore(d,q)}(window,document,'script','_gs');
+
+  _gs('GSN-148845-L');
+
+  // to track the current user in GoSquared People...
+  _gs('identify', {
+    username: localStorage.getItem("userName"),
+    seenbefore: localStorage.getItem("seenBefore"),
+    highestscore: localStorage.getItem("highScore")
+    // add any other properties...
+  });
+
+
+  // alert(localStorage.getItem("userName") + " - " +localStorage.getItem("seenBefore") + " - " + localStorage.getItem("highScore"))
+</script> -->
 </head>
 
-<body onClick="window.location.assign('Tutorial.html')" onLoad="document.getElementById('wtcc').className = 'activateLargeText'; checkBrowser();">
+<body onClick="window.location.assign('Tutorial.html')" onLoad="checkUser();document.getElementById('wtcc').className = 'activateLargeText'; checkBrowser();">
     <div id="content">
       <!-- Home page. -->
         <h1 id="herotext"><span id="wtcc">Welcome to Colour Craze.</span><br>
         <a id="tutLarge">Click to begin.</a>
         </h1>
-        </h4>
-      <!-- Second page. -->
-        <!--<h1 id="wtcc" class="tut SiLfont largest">
-          <nodisplay>
-          When the chosen colour appears, you must click on it.<br />
-          If you miss five colours, you lose.<br /><br />
-          You can select colours using your mouse,<br />
-          or by pressing 1, 2, 3 or 4.<br /><br />
-        </nodisplay>
-          <button id="startButton" onClick="window.location.assign('Game.html')" class="SiLfont largest">Click to begin!</button>
-        </h1>
-        <h2 class="SiLfont larger">
-        </h2>
-      -->
-        <h4 id="credit">Made by Ben Carroll.<br></h4>
+        <h4 id="credit"><span id="userName"></span><br /><span id="highScore"></span></h4>
     </div>
 </body>
 </html>

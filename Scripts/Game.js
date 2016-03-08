@@ -34,9 +34,11 @@ function keypressCheck(stuff) {
         } else if (code === 52) {
             colourClicked(4)
         } else if (code === 53) {
-            setColours()
-        } else if (code === 63) {
-            window.location.assign('Tutorial.html')
+            superfunc = setInterval(function(){ setColours() }, 50);
+        } else if (code === 54) {
+            clearInterval(superfunc);
+        } else if (code === 63 || 47) {
+            if (confirm("Are you sure you want to go back to the tutorial page?")){window.location.assign('Tutorial.html')}
         }
     }
 }
@@ -130,7 +132,7 @@ function colourClicked(zone) {
         if (document.getElementById('colour' + zone).style.backgroundColor == cc) {
             userScore = Number(userScore + 1);
             document.getElementById('score').innerHTML = userScore;
-            if (timeNow > (lastClicked + 300)) {
+            if (timeNow < (lastClicked + 100)) {
                 lossSpeed += 500;
             }
             setColours();

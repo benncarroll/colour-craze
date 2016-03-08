@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>------ Colour Craze ------</title>
+    <link href="Styles/SignUp.css" rel="stylesheet" type="text/css">
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/jquery.effects.core.js"></script>
+    <script src="Scripts/SignUp.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
+</head>
+<body onLoad="checkUser();document.getElementById('wtcc').className = 'activateLargeText';">
+    <div id="content">
+      <!-- Home page. -->
+        <h1 id="herotext"><span id="wtcc">Welcome to Colour Craze.</span>
+        <a id="tutLarge"><br />It doesn't look like we've met before! Please pick a username!</a>
+        <br /><br /><br />
+        <form name="signUp">
+          <input type="search" id="usernameField" name="input" class="form" placeholder="Username"/>
+          <br /><br />
+          <input type="button" class="form" value="Submit!" OnClick="clickFunction()"/>
+        </form>
+        </h1>
+        <h4 id="credit"><span id="userName"></span><br /><span id="highScore"></span></h4>
+    </div>
+</body>
+</html>
