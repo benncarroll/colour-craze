@@ -17,8 +17,8 @@ var userScore = 0,
     gameEnded = false,
     highScore = "";
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Game code
 
@@ -34,11 +34,15 @@ function keypressCheck(stuff) {
         } else if (code === 52) {
             colourClicked(4)
         } else if (code === 53) {
-            superfunc = setInterval(function(){ setColours() }, 50);
+            superfunc = setInterval(function() {
+                setColours()
+            }, 50);
         } else if (code === 54) {
             clearInterval(superfunc);
         } else if (code === 63 || 47) {
-            if (confirm("Are you sure you want to go back to the tutorial page?")){window.location.assign('Tutorial.html')}
+            if (confirm("Are you sure you want to go back to the tutorial page?")) {
+                window.location.assign('Tutorial.html')
+            }
         }
     }
 }
@@ -113,20 +117,20 @@ function setHighScore() {
 }
 
 function colourClicked(zone) {
-  if (gameStarted && gameEnded === false) {
-    resetTimer();
-    startTimer();
-      var timeNow = (new Date()).getTime();
-      if (timeNow > (lastClicked + lossSpeed)) {
-          losses = Number(losses + 1);
-          if (losses >= 5) {
-              document.getElementById('loseTitle2').innerHTML = "Too Slow!"
-          }
-          document.getElementById('losses').innerHTML = losses;
-          checkGameOver();
-      }
-      lastClicked = timeNow;
-  }
+    if (gameStarted && gameEnded === false) {
+        resetTimer();
+        startTimer();
+        var timeNow = (new Date()).getTime();
+        if (timeNow > (lastClicked + lossSpeed)) {
+            losses = Number(losses + 1);
+            if (losses >= 5) {
+                document.getElementById('loseTitle2').innerHTML = "Too Slow!"
+            }
+            document.getElementById('losses').innerHTML = losses;
+            checkGameOver();
+        }
+        lastClicked = timeNow;
+    }
     if (gameStarted && gameEnded === false) {
         cc = document.getElementById('middle').style.backgroundColor;
         if (document.getElementById('colour' + zone).style.backgroundColor == cc) {
@@ -156,35 +160,39 @@ function colourClicked(zone) {
 var millisec = 3000;
 var timer;
 
-function timerDisplay(){
-     document.getElementById('timerDisplayField').innerHTML = "Time left:   " + (lossSpeed - millisec) + "ms";
-     timer = setTimeout("timerDisplay()",100);
-     millisec+=100
-     if (millisec >= lossSpeed) {
-       document.getElementById('timerDisplayField').innerHTML = "OUT OF TIME!"
-      clearTimeout(timer)
-     }
+function timerDisplay() {
+    document.getElementById('timerDisplayField').innerHTML = "Time left:   " + (lossSpeed - millisec) + "ms";
+    timer = setTimeout("timerDisplay()", 100);
+    millisec += 100
+    if (millisec >= lossSpeed) {
+        document.getElementById('timerDisplayField').innerHTML = "OUT OF TIME!"
+        clearTimeout(timer)
+    }
 }
+
 function startTimer() {
-  if (timer > 0) {
-	return;
-  }
-  timerDisplay();
+    if (timer > 0) {
+        return;
+    }
+    timerDisplay();
 }
+
 function stopTimer() {
-  clearTimeout(timer);
-  timer = 0;
+    clearTimeout(timer);
+    timer = 0;
 }
+
 function startstoptimer() {
-  if (timer > 0) {
-     clearTimeout(timer);
-     timer = 0;
-  } else {
-     timerDisplay();
-  }
+    if (timer > 0) {
+        clearTimeout(timer);
+        timer = 0;
+    } else {
+        timerDisplay();
+    }
 }
+
 function resetTimer() {
-	stopTimer();
-	millisec = 0;
-	seconds = 0;
+    stopTimer();
+    millisec = 0;
+    seconds = 0;
 }

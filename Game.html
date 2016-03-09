@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>------ Colour Craze ------</title>
     <link href="Styles/Game.css" rel="stylesheet" type="text/css">
     <script src="Scripts/jquery.min.js"></script>
     <script src="Scripts/Game.js"></script>
     <script lang="JavaScript">
-    //Function to set height of game pieces. Written by Ben Carroll.
+        // Function to set height of game pieces. Written by Ben Carroll.
         for (var e = document.querySelectorAll(".colourzone"), n = 0; n < e.length; n++) {
             e[n].style.height = window.innerHeight / 4 + "px"
         }
@@ -14,37 +15,38 @@
 </head>
 
 <body id="body" onKeyPress="keypressCheck(event)" onLoad="
-
-for (var e = document.querySelectorAll('.colourzone'), n = 0; n < e.length; n++) {3
+for (var e = document.querySelectorAll('.colourzone'), n = 0; n < e.length; n++) {
     e[n].style.height = window.innerHeight / 4 + 'px'
 };
 startGame();">
-<div id="loseTitle" onClick="location.reload();">
-  <h2 id="loseTitle2">You failed.</h2>
-  <h4>You scored <span id="finalScore"></span>.</h4>
-  <h4>Your highscore is <span id="highScore"></span>.</h4>
-  <h4>Click to restart!</h4>
-</div>
-  <div id="colour1" class="colourzone gameElements" onClick="colourClicked(1)">
-    <br />
-  </div>
-  <div id="colour2" class="colourzone gameElements" onClick="colourClicked(2)">
-    <br />
-  </div>
-  <div id="colour3" class="colourzone gameElements" onClick="colourClicked(3)">
-    <br />
-  </div>
-  <div id="colour4" class="colourzone gameElements" onClick="colourClicked(4)">
-    <br />
-  </div>
-<div id="middle" class="gameElements top" onClick="startGame();">
-<span id="footerL">S T A R T !</span><br />
-<h4 id="credit"><span id="timerDisplayField">Time left: 3000ms</span></h4>
-</div>
-<div id="middle" class="gameElements bottom">
-<h4 id="credit" class="gameElements">Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br>
+    <div id="loseTitle" onClick="location.reload();">
+        <h2 id="loseTitle2">You failed.</h2>
+        <h4>You scored <span id="finalScore"></span>.</h4>
+        <h4>Your highscore is <span id="highScore"></span>.</h4>
+        <h4>Click to restart!</h4>
+    </div>
+    <div id="colour1" class="colourzone gameElements" onClick="colourClicked(1)">
+        <br />
+    </div>
+    <div id="colour2" class="colourzone gameElements" onClick="colourClicked(2)">
+        <br />
+    </div>
+    <div id="colour3" class="colourzone gameElements" onClick="colourClicked(3)">
+        <br />
+    </div>
+    <div id="colour4" class="colourzone gameElements" onClick="colourClicked(4)">
+        <br />
+    </div>
+    <div id="middle" class="gameElements top" onClick="startGame();">
+        <span id="footerL">S T A R T !</span>
+        <br />
+        <h4 id="credit"><span id="timerDisplayField">Time left: 3000ms</span></h4>
+    </div>
+    <div id="middle" class="gameElements bottom">
+        <h4 id="credit" class="gameElements">Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br>
 
 </h4>
-</div>
+    </div>
 </body>
+
 </html>
