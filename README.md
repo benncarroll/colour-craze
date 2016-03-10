@@ -1,29 +1,31 @@
-# Colour Craze!** #
-![Colour Craze](https://bitbucket.org/repo/5rpbpe/images/3724938250-Screen%20Shot%202016-03-09%20at%206.24.56%20PM.png)
-This README would normally document whatever steps are necessary to get your application up and running.
+# **Colour Craze!** #
+![Colour Craze](Images/ColourCraze.png)
 
-### What is this repository for? ###
+Welcome to Colour Craze, the super-awesome colour-changing game!
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### How does it work? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* In each Colour Craze round, you will have to click on the Current Colour before your time runs out, or you will lose a point.
+* Colour Craze runs in a Web Browser, and it is made with the help of HTML, CSS and of course, Javascript!
 
-### Contribution guidelines ###
+### How do I play? ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* You can play version 1.0 of Colour Craze at [www.colourcraze.tk](www.colourcraze.tk).
+    * This will be updated to version 2.0 very soon.
+* Also, the source code will soon be available for download.
 
-### Who do I talk to? ###
+### What is it made with? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Colour Craze uses native JavaScript, but also a teeny tiny bit of jQuery, for the cool colour-changing background a few pages.
+* Within the JavaScript, it uses a few of the following:
+
+```javascript
+// Changing the background colour of the elements
+for (var e = document.querySelectorAll('#middle'), n = 0; n < e.length; n++) {
+    e[n].style.backgroundColor = currentColour
+}
+// More source code will be released later...
+```
+
+#### Thanks for checking it out! Head over to [www.colourcraze.tk](www.colourcraze.tk) to play now! ####
