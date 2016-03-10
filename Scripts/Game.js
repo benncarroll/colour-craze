@@ -3,8 +3,8 @@ function sleep(e) {
     for (var t = (new Date).getTime(), n = 0; 1e7 > n && !((new Date).getTime() - t > e); n++);
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Define game vars and other stuff
 var userScore = 0,
@@ -100,7 +100,6 @@ function setColours() {
     for (var e = document.querySelectorAll('#middle'), n = 0; n < e.length; n++) {
         e[n].style.backgroundColor = currentColour
     }
-
     document.getElementById('colour1').style.backgroundColor = currentZones2[0];
     document.getElementById('colour2').style.backgroundColor = currentZones2[1];
     document.getElementById('colour3').style.backgroundColor = currentZones2[2];
@@ -136,9 +135,6 @@ function colourClicked(zone) {
         if (document.getElementById('colour' + zone).style.backgroundColor == cc) {
             userScore = Number(userScore + 1);
             document.getElementById('score').innerHTML = userScore;
-            if (timeNow < (lastClicked + 100)) {
-                lossSpeed += 500;
-            }
             setColours();
             setSpeed();
         } else {
