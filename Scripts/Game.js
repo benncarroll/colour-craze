@@ -1,12 +1,27 @@
+// Minified version of colour changing background from CodeZag. (http://bit.ly/ccbackground)
+function spectrum() {
+    var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    $('#div').animate({
+        backgroundColor: hue
+    }, 1000);
+    spectrum();
+}
+// End of colour changing background
+
 // Sleep function, allowing us to 'pause time' in js
 function sleep(e) {
     for (var t = (new Date).getTime(), n = 0; 1e7 > n && !((new Date).getTime() - t > e); n++);
 }
 
+function playSound(soundfile) {
+    var inputElem = "<audio src=\"" + soundfile + "\" autoplay volume=\"0.8\" />";
+    document.getElementById("dummy").innerHTML = inputElem;
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Define game vars and other stuff
+// Define game vars
 var userScore = 0,
     losses = -1,
     correctZone = "",
@@ -16,33 +31,45 @@ var userScore = 0,
     lossSpeed = 3000,
     gameEnded = false,
     highScore = "";
+    previousHighScore = localStorage.getItem("highScore");
+    beatenHighScore = false;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Game code
 
+function crazyMode(mode) {
+    if (mode) {
+        for (var e = document.querySelectorAll('.colourzone'), n = 0; n < e.length; n++) {
+            e[n].style.transition = "";
+        }
+        superfunc = setInterval(function() {
+            setColours();
+        }, 50);
+    } else {
+        clearInterval(superfunc);
+        for (var e = document.querySelectorAll('.colourzone'), n = 0; n < e.length; n++) {
+            e[n].style.transition = "background-color 0.5s\nborder-color 0.5s";
+        }
+    }
+}
+
 function keypressCheck(stuff) {
     if (gameStarted && gameEnded === false) {
         code = stuff.keyCode;
-        if (code === 49) {
+        if (code === 59) {
             colourClicked(1)
-        } else if (code === 50) {
+        } else if (code === 39) {
             colourClicked(2)
-        } else if (code === 51) {
+        } else if (code === 46) {
             colourClicked(3)
-        } else if (code === 52) {
+        } else if (code === 47) {
             colourClicked(4)
         } else if (code === 53) {
-            superfunc = setInterval(function() {
-                setColours()
-            }, 50);
+            crazyMode(true)
         } else if (code === 54) {
-            clearInterval(superfunc);
-        } else if (code === 63 || 47) {
-            if (confirm("Are you sure you want to go back to the tutorial page?")) {
-                window.location.assign('Tutorial.html')
-            }
+            crazyMode(false)
         }
     }
 }
@@ -50,7 +77,6 @@ function keypressCheck(stuff) {
 function startGame() {
     if (gameStarted === false) {
         gameStarted = true;
-        document.getElementById('footerL').innerHTML = "Current Colour";
     }
 }
 
@@ -69,6 +95,7 @@ function checkGameOver() {
         document.getElementById('finalScore').innerHTML = userScore;
         setHighScore();
         document.getElementById('highScore').innerHTML = highScore;
+        stopTimer();
         gameEnded = true;
     }
 }
@@ -83,9 +110,21 @@ function setSpeed() {
             lossSpeed -= 500;
         } else if (userScore === 20) {
             lossSpeed -= 500;
-        } else if (userScore === 30) {
-            lossSpeed -= 500;
         }
+    }
+}
+
+function checkScore() {
+    if (previousHighScore < userScore && beatenHighScore === false && previousHighScore > 4) {
+        stopTimer();
+        document.getElementById('superTitle').innerHTML = "NEW HIGHSCORE!";
+        crazyMode(true);
+        beatenHighScore = true;
+        setTimeout(function() {
+            document.getElementById('superTitle').innerHTML = "";
+            crazyMode(false);
+        }, 500)
+        startTimer();
     }
 }
 
@@ -137,6 +176,7 @@ function colourClicked(zone) {
             document.getElementById('score').innerHTML = userScore;
             setColours();
             setSpeed();
+            checkScore();
         } else {
             losses = Number(losses + 1);
             document.getElementById('losses').innerHTML = losses;
@@ -146,49 +186,33 @@ function colourClicked(zone) {
         }
     }
 }
-
-
-
-
-
-
 //Timer code
-var millisec = 3000;
-var timer;
+var millisec = 3000,
+    timer;
 
 function timerDisplay() {
-    document.getElementById('timerDisplayField').innerHTML = "Time left:   " + (lossSpeed - millisec) + "ms";
+    document.getElementById("timerDisplayField").innerHTML = "Time left:   " + (lossSpeed - millisec) + "ms";
     timer = setTimeout("timerDisplay()", 100);
-    millisec += 100
+    millisec += 100;
     if (millisec >= lossSpeed) {
-        document.getElementById('timerDisplayField').innerHTML = "OUT OF TIME!"
-        clearTimeout(timer)
+        playSound("Audio/deduct.mp3");
+        document.getElementById("timerDisplayField").innerHTML = "OUT OF TIME!";
+        clearTimeout(timer);
     }
 }
 
 function startTimer() {
-    if (timer > 0) {
-        return;
-    }
-    timerDisplay();
+    timer > 0 || timerDisplay()
 }
 
 function stopTimer() {
-    clearTimeout(timer);
-    timer = 0;
+    clearTimeout(timer), timer = 0
 }
 
 function startstoptimer() {
-    if (timer > 0) {
-        clearTimeout(timer);
-        timer = 0;
-    } else {
-        timerDisplay();
-    }
+    timer > 0 ? (clearTimeout(timer), timer = 0) : timerDisplay()
 }
 
 function resetTimer() {
-    stopTimer();
-    millisec = 0;
-    seconds = 0;
+    stopTimer(), millisec = 0, seconds = 0
 }

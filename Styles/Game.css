@@ -1,79 +1,112 @@
- /* CSS written entirely by Ben Carroll */
-
- @font-face {
-     font-family: 'Six Caps';
-     src: url(SixCaps.ttf) format("truetype");
- }
- @font-face {
-     font-family: 'SiL';
-     src: url(SiL.ttf) format("truetype");
- }
- * {
-     font-family: 'Six Caps';
-     margin: 0 auto;
-     text-align: center;
- }
- html {
-     cursor: url('animated.gif'), url('cursor.png');
-     background-color: orange;
-     overflow: hidden;
- }
- .SiLfont {
-     font-family: 'SiL';
-     font-size: 80%;
- }
- .colourzone {
-     display: inline-block;
-     width: 100%;
-     height: 25%;
- }
- #colour1 {
-     background-color: red;
- }
- #colour2 {
-     background-color: green;
- }
- #colour3 {
-     background-color: yellow;
- }
- #colour4 {
-     background-color: blue;
- }
- #middle {
-     position: fixed;
-     color: red;
-     border: 8px ridge brown;
-     padding: 10px;
-     background-color: yellow;
- }
- .top {
-     top: 10px;
-     width: 20%;
-     left: 40%;
- }
- .bottom {
-     bottom: 10px;
-     width: 20%;
-     left: 40%;
- }
- #credit, #footerL, #losses, #score, #timerDisplayField {
-     font-family: 'SiL';
-     font-size: 20px;
- }
- #footerL, #credit {
-     background-color: rgba(255, 255, 255, 0);
-     border: 0px rgba(255, 255, 255, 0);
-     color: white;
-     letter-spacing: 1px;
-     text-align: center;
-     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
- }
- #loseTitle {
-     display: none;
-     padding: 60px;
-     font-size: 100px;
-     color: darkblue;
- }
- .normFont {
-     font-family: Arial;
- }
+#colour2, #colour4 {
+    position: absolute;
+    right: 20%
+}
+#colour3, #middle {
+    background-color: #ff0
+}
+@font-face {
+    font-family: 'Six Caps';
+    src: url('SixCaps.ttf') format("truetype")
+}
+@font-face {
+    font-family: SiL;
+    src: url('SiL.ttf') format("truetype")
+}
+* {
+    font-family: 'Six Caps';
+    margin: 0 auto;
+    text-align: center
+}
+#superTitle {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    color:orange;
+}
+body {
+    background-color: orange;
+    transition: background-color 1s
+}
+html {
+    cursor: url(animated.gif), url(cursor.png);
+    overflow: hidden;
+    -webkit-var-primary-width: 300px;
+}
+.SiLfont {
+    font-family: SiL;
+    font-size: 80%
+}
+.colourzone {
+    display: inline-block;
+    width: 30%;
+    height: 40%;
+    border: 5px solid orange;
+    transition: background-color .5s;
+    transition: border-color 1s;
+    /*border-radius: 100%;*/
+}
+#colour1 {
+    background-color: red;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    /*transform: rotate(45deg);*/
+    border-radius: 100% 0 0
+}
+#colour2 {
+    background-color: green;
+    top: 10%;
+    /*transform: rotate(-45deg);*/
+    border-radius: 0 100% 0 0
+}
+#colour3 {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    /*transform: rotate(-45deg);*/
+    border-radius: 0 0 0 100%
+}
+#colour4 {
+    background-color: #00f;
+    bottom: 10%;
+    /*transform: rotate(45deg);*/
+    border-radius: 0 0 100%
+}
+#middle {
+    color: red;
+    border: 30px solid orange;
+    width: 20%;
+    left: 37%;
+    right: 37%;
+    position: fixed;
+    top: 39%;
+    height: 14%;
+    overflow: scroll;
+    border-radius: 100%;
+    transition: border-color 1s
+}
+#credit, #footerL, #losses, #score, #timerDisplayField {
+    font-family: SiL;
+    font-size: 20px
+}
+#credit, #footerL {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0 rgba(255, 255, 255, 0);
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#loseTitle {
+    display: none;
+    padding: 60px;
+    font-size: 100px;
+    color: #00008b;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff
+}
+.normFont {
+    font-family: Arial
+}

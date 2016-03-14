@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>------ Colour Craze ------</title>
+    <link href="Styles/Home.css" rel="stylesheet" type="text/css">
+    <script src="Scripts/jquery.min.js">
+    </script>
+    <script src="Scripts/jquery.effects.core.js">
+    </script>
+    <script src="Scripts/Home.js">
+    </script>
+    <style>
+    #content {
+        padding: 10% 0 0;
+    }
+    </style>
+</head>
+
+<body onLoad="checkUser();document.getElementById('wtcc').className = 'activateLargeText'; checkBrowser();">
+    <div id="content" onClick="window.location.assign('Tutorial.html')">
+        <!-- Home page. -->
+        <h1 id="herotext"><span id="wtcc">Welcome to Colour Craze.</span><br>
+        <a id="tutLarge">Click to begin.</a>
+        </h1>
+        <h4 id="credit"><span id="userName"></span><br /><span id="highScore"></span></h4>
+    </div>
+
+</body>
+
+</html>

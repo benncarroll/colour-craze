@@ -5,48 +5,54 @@
     <title>------ Colour Craze ------</title>
     <link href="Styles/Game.css" rel="stylesheet" type="text/css">
     <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/jquery.effects.core.js"></script>
     <script src="Scripts/Game.js"></script>
-    <script lang="JavaScript">
-        // Function to set height of game pieces. Written by Ben Carroll.
-        for (var e = document.querySelectorAll(".colourzone"), n = 0; n < e.length; n++) {
-            e[n].style.height = window.innerHeight / 4 + "px"
+    <script type="text/javascript">
+        function getRandomColor() {
+            for (var o = "0123456789ABCDEF".split(""), n = "#", r = 0; 6 > r; r++) n += o[Math.floor(16 * Math.random())];
+            return n
         }
+
+        function change_random_bgcolor(o) {
+            setInterval(function() {
+                thisColour = getRandomColor();
+                document.getElementById('body').style.backgroundColor = thisColour;
+                document.getElementById('middle').style.borderColor = thisColour;
+                for (var e = document.querySelectorAll('.colourzone'), n = 0; n < e.length; n++) {
+                    e[n].style.borderColor = thisColour;
+                }
+            }, 750);
+        }
+        change_random_bgcolor(0);
     </script>
 </head>
 
-<body id="body" onKeyPress="keypressCheck(event)" onLoad="
-for (var e = document.querySelectorAll('.colourzone'), n = 0; n < e.length; n++) {
-    e[n].style.height = window.innerHeight / 4 + 'px'
-};
-startGame();">
+<body id="body" onKeyPress="keypressCheck(event)" onLoad="startGame();">
+    <span id="dummy" style="display:none;"></span>
     <div id="loseTitle" onClick="location.reload();">
         <h2 id="loseTitle2">You failed.</h2>
         <h4>You scored <span id="finalScore"></span>.</h4>
         <h4>Your highscore is <span id="highScore"></span>.</h4>
         <h4>Click to restart!</h4>
     </div>
+    <h1 id="superTitle"></h1>
     <div id="colour1" class="colourzone gameElements" onClick="colourClicked(1)">
-        <br />
-    </div>
+        <br/>
+        <br/> </div>
     <div id="colour2" class="colourzone gameElements" onClick="colourClicked(2)">
-        <br />
-    </div>
+        <br/>
+        <br/> </div>
     <div id="colour3" class="colourzone gameElements" onClick="colourClicked(3)">
-        <br />
-    </div>
+        <br/>
+        <br/> </div>
     <div id="colour4" class="colourzone gameElements" onClick="colourClicked(4)">
-        <br />
-    </div>
-    <div id="middle" class="gameElements top" onClick="startGame();">
-        <span id="footerL">S T A R T !</span>
-        <br />
+        <br/>
+        <br/> </div>
+    <div id="middle" class="gameElements center">
+        <br/>
         <h4 id="credit"><span id="timerDisplayField">Time left: 3000ms</span></h4>
-    </div>
-    <div id="middle" class="gameElements bottom">
-        <h4 id="credit" class="gameElements">Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br>
-
-</h4>
-    </div>
+        <h4 id="credit"><span id="highScoreBeaten"></span></h4>
+        <h4 id="credit" class="gameElements">Score: <span id="score">0</span> - Fails: <span id="losses">0</span><br></h4> </div>
 </body>
 
 </html>

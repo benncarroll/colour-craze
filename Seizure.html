@@ -1,29 +1,37 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-  <style>
-
-* {
-  padding: 0px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-html {
-  cursor: url('cursor.png'), url('cursor.iso');
-}
-
-img {
-  width:100%;
-  height: 100%;
-}
-
-body {
-  background-color:orange;
-}
-
-  </style>
+    <title>------ Colour Craze ------</title>
+    <link href="Styles/Home.css" rel="stylesheet" type="text/css">
+    <script src="Scripts/jquery.min.js">
+    </script>
+    <script src="Scripts/jquery.effects.core.js">
+    </script>
+    <script src="Scripts/Home.js">
+    </script>
+    <style>
+    h1 {
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 50px;
+    }
+    a {
+        color: #00f;
+    }
+    span {
+        font-size: larger;
+        color: red;
+    }
+    </style>
 </head>
+
 <body onClick="window.location.assign('Game.html')">
-  <img src="Images/SeizureWarning.jpg" />
+    <div id="content">
+        <h1 id="herotext">
+            <a id="tutLarge"><span>WARNING.</span><br />This game has the potential to invoke seizures for people with photosensitive epilepsy. <br />Viewer discretion is advised.<br  /><br />Click to continue.</a>
+        </h1>
+    </div>
 </body>
+
 </html>
